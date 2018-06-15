@@ -1,4 +1,4 @@
-module.export = function(app){
+module.exports = function(app){
 
 	app.get('/todo', function(req,res){
 		res.render('todo');
@@ -12,7 +12,7 @@ module.export = function(app){
 
 	});
 
-	app.delete('/todo', function(req,res){
+	app.delete('/todo/:item', function(req,res){
 
 
 		
