@@ -28,6 +28,8 @@ module.exports = function(app){
 			return todo.item.replace(/ /g , '-') !== req.params.item;
 		});
 
+		console.log('test2');
+		
 		res.json(data);
 		
 	});
