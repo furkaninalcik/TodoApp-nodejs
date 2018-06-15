@@ -1,4 +1,8 @@
+var bodyParser = require('body-parser');
+
 var data = [{item: 'water'} , {item: 'milk'} , {item: 'tea'}];
+
+var urlencodedParser = bodyParser.urlencoded({extended: false});
 
 module.exports = function(app){
 
@@ -8,8 +12,10 @@ module.exports = function(app){
 
 	});
 
-	app.post('/todo', function(req,res){
+	app.post('/todo', urlencodedParser , function(req,res){
 
+		data.push(req.body);
+		res.json(data);
 
 
 	});
